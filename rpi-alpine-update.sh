@@ -13,7 +13,7 @@ eval "$POST_UPDATE"
 ALPINE_RELEASE="`cat /etc/alpine-release`"
 echo "branch: $ALPINE_BRANCH, release: $ALPINE_RELEASE, arch: $ALPINE_ARCH"
 
-if grep -wq "alpine-rpi-$ALPINE_RELEASE" "$SD_MOUNT/.alpine-release"; then 
+if grep -q "alpine-rpi-$ALPINE_RELEASE " "$SD_MOUNT/.alpine-release"; then 
     echo "No kernel/firmware update required" 
 else 
     echo "Kernel/firmware update"
